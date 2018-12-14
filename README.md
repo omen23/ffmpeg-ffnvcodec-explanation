@@ -13,6 +13,31 @@ make && sudo make install
 ```
 
 **2. Compile FFmpeg:**
+ffmpeg will automatically detect the ffnvcodec-headers — extract from `configure --help`:
+```
+  The following libraries provide various hardware acceleration features:
+  --disable-amf            disable AMF video encoding code [autodetect]
+  --disable-audiotoolbox   disable Apple AudioToolbox code [autodetect]
+  --enable-cuda-sdk        enable CUDA features that require the CUDA SDK [no]
+  --disable-cuvid          disable Nvidia CUVID support [autodetect]
+  --disable-d3d11va        disable Microsoft Direct3D 11 video acceleration code [autodetect]
+  --disable-dxva2          disable Microsoft DirectX 9 video acceleration code [autodetect]
+  --disable-ffnvcodec      disable dynamically linked Nvidia code [autodetect]
+  --enable-libdrm          enable DRM code (Linux) [no]
+  --enable-libmfx          enable Intel MediaSDK (AKA Quick Sync Video) code via libmfx [no]
+  --enable-libnpp          enable Nvidia Performance Primitives-based code [no]
+  --enable-mmal            enable Broadcom Multi-Media Abstraction Layer (Raspberry Pi) via MMAL [no]
+  --disable-nvdec          disable Nvidia video decoding acceleration (via hwaccel) [autodetect]
+  --disable-nvenc          disable Nvidia video encoding code [autodetect]
+  --enable-omx             enable OpenMAX IL code [no]
+  --enable-omx-rpi         enable OpenMAX IL code for Raspberry Pi [no]
+  --enable-rkmpp           enable Rockchip Media Process Platform code [no]
+  --disable-v4l2-m2m       disable V4L2 mem2mem code [autodetect]
+  --disable-vaapi          disable Video Acceleration API (mainly Unix/Intel) code [autodetect]
+  --disable-vdpau          disable Nvidia Video Decode and Presentation API for Unix code [autodetect]
+  --disable-videotoolbox   disable VideoToolbox code [autodetect]
+```
+
 ```
 sudo apt-get build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
