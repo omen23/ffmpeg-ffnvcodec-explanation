@@ -127,6 +127,7 @@ mpv --hwdec=nvdec input
 ```
 **5. Use hardware-acceleration enabled chromium**
 Thanks to the author (Saikrishna Arcot) who patched chromium against vaapi (you'll need the vdpau-va-driver)
+https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
 ```
 sudo add-apt-repository ppa:saiarcot895/chromium-dev
 sudo apt-get update
@@ -138,6 +139,7 @@ Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/
 (even you now have a system that could offload VP9 decoding to the video card it is not implemented in any browser)
 
 - **Checking if chromium actually uses the video card**
+
 Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box `video_decoder GpuVideoDecoder` should be the status - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere.
-https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
+
 
