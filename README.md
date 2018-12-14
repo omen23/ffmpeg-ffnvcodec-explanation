@@ -6,6 +6,7 @@ https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 ```
 sudo apt-get install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
+# please check the support plan for your GPU – nvidia-driver-{390,396,410,415} available so you dont ruin your display server
 sudo apt-get install nvidia-driver-415
 ```
 
