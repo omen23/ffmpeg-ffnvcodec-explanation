@@ -13,7 +13,7 @@ sudo apt-get install nvidia-driver-415
 
 ```
 sudo apt-get install make git
-mkdir -p ~/devel/ && cd ~/devel/
+mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
 make && sudo make install
