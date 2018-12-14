@@ -108,7 +108,7 @@ sudo apt-get install obs-studio
 ```
 
 
-**4. Build MPV to use NVDEC for movie decoding**
+**4. Build MPV to use NVDEC for video decoding**
 ```
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
