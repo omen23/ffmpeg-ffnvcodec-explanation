@@ -70,6 +70,8 @@ rm libavcodec58*
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg libavcodec-dev libavcodec-extra58 libavfilter-dev libavformat58 libavresample-dev libavutil-dev libavutil56
 ```
+Should the standard compilation not fit your needs (you have the need to link in specific libraries) then you can change the build-rules in `~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules`
+
 - **Testing:**
 ```
 $ ffmpeg -hide_banner -encoders  | grep nvenc
