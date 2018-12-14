@@ -110,7 +110,7 @@ sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt-get update
 sudo apt-get install obs-studio
 ```
-You NOW should have a fully functional OBS with hardware-acceleration!
+**NOW** you should have a fully functional OBS with hardware-acceleration!
 The rest of this guide is optional for people who want to get the most out of their GPU.
 
 **4. Build MPV to use NVDEC for video decoding**
