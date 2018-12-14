@@ -69,7 +69,7 @@ sudo apt-get source ffmpeg
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number]
 debuild -us -uc -b
 cd ..
-rm libavcodec58* # creates package conflicts - if ffmpeg complains about library mismatches don't worry, it's not broken
+rm libavcodec58* # creates package conflicts - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
 # you can: alias ffmpeg='ffmpeg -hide_banner' if you think your terminal gets too cluttered with debug messages
 # put it in your ~/.bashrc to make it permanent
 sudo dpkg -i *.deb
