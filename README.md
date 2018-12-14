@@ -43,6 +43,13 @@ $ ffmpeg -hide_banner -decoders | grep cuvid
  V..... vc1_cuvid            Nvidia CUVID VC1 decoder (codec vc1)
  V..... vp8_cuvid            Nvidia CUVID VP8 decoder (codec vp8)
  V..... vp9_cuvid            Nvidia CUVID VP9 decoder (codec vp9) 
+ $ ffmpeg -hide_banner -hwaccels
+Hardware acceleration methods:
+vdpau
+cuda
+vaapi
+drm
+cuvid
 ```
 
 **3. Install OBS (no need to compile)** 
