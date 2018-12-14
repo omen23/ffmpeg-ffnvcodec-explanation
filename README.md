@@ -4,6 +4,7 @@ https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
 **0. Get Nvidia's proprietary driver:**
 ```
+sudo apt-get install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get install nvidia-driver-415
 ```
@@ -101,7 +102,6 @@ cuvid
 
 **3. Install OBS (no need to compile)** 
 ```
-sudo apt-get install ppa-purge # for safety
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt-get update
 sudo apt-get install obs-studio
