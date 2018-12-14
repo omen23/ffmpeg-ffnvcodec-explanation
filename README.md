@@ -75,7 +75,7 @@ rm libavcodec58* # creates package conflicts - if ffmpeg complains about library
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg libavcodec-dev libavcodec-extra58 libavfilter-dev libavformat58 libavresample-dev libavutil-dev libavutil56
 ```
-Should `debuild` fail make sure the files are "yours" and dont belong to user `root` -> `sudo chown -hR $USER:$USER *` in the ffmpeg source-tree
+Should `debuild` fail make sure the files are "yours" and dont belong to user `root` -> change ownership `sudo chown -hR $USER:$USER *` in the ffmpeg source-tree folder.
 
 - **Testing:**
 ```
@@ -128,7 +128,7 @@ mpv --hwdec=nvdec input
 ```
 **5. Use hardware-acceleration enabled chromium**
 
-Thanks to the author (Saikrishna Arcot) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the vdpau-va-driver)
+Thanks to the author (Saikrishna Arcot) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the vdpau-va-driver).
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
 ```
 sudo add-apt-repository ppa:saiarcot895/chromium-dev
@@ -143,5 +143,3 @@ Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/
 - **Checking if chromium actually uses the video card**
 
 Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box - somewhere you will find `video_decoder` and `GpuVideoDecoder` should be the value of the field - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check vainfo and vdpauinfo for outputs first...)
-
-
