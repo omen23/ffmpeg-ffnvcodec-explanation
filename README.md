@@ -13,7 +13,8 @@ make && sudo make install
 ```
 
 **2. Compile FFmpeg:**
-ffmpeg will automatically detect the ffnvcodec-headers — extract from `configure --help`:
+
+ffmpeg will automatically detect the ffnvcodec-headers — extract from `./configure --help`:
 ```
   The following libraries provide various hardware acceleration features:
   --disable-amf            disable AMF video encoding code [autodetect]
