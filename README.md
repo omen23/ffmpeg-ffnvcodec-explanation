@@ -4,16 +4,16 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 
 **0. Get Nvidia's proprietary driver:**
 ```
-sudo apt-get install ppa-purge # for safety
+sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
 # please check the support plan for your GPU – nvidia-driver-{390,396,410,415} available so your display server doesn't fail!
-sudo apt-get install nvidia-driver-415
+sudo apt install nvidia-driver-415
 ```
 
 **1. Install the nv-codec-headers package:**
 
 ```
-sudo apt-get install make git
+sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
@@ -62,10 +62,10 @@ ffmpeg will automatically detect the ffnvcodec-headers — extract from `./confi
 
 Should the standard compilation not fit your needs (you have the need to link in specific libraries/dont need some libraries or you want to enable/disable specific features) then you can change the build-rules in `~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules`
 ```
-sudo apt-get build-dep ffmpeg
+sudo apt build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
-sudo apt-get source ffmpeg
+sudo apt source ffmpeg
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number]
 debuild -us -uc -b
 cd ..
@@ -107,8 +107,8 @@ cuvid
 **3. Install OBS (no need to compile)** 
 ```
 sudo add-apt-repository ppa:obsproject/obs-studio
-sudo apt-get update
-sudo apt-get install obs-studio
+sudo apt update
+sudo apt install obs-studio
 ```
 **NOW** you should have a fully functional OBS with hardware-acceleration!
 The rest of this guide is ***optional*** (for people who want to get the most out of their GPU).
@@ -117,7 +117,7 @@ The rest of this guide is ***optional*** (for people who want to get the most ou
 ```
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
-sudo apt-get source mpv
+sudo apt source mpv
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
 debuild -us -uc -b
 cd ..
@@ -132,7 +132,7 @@ Thanks to the author (Saikrishna Arcot) who patched chromium against VAAPI there
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
 ```
 sudo add-apt-repository ppa:saiarcot895/chromium-dev
-sudo apt-get update
+sudo apt update
 sudo apt install vdpau-va-driver chromium-browser vdpauinfo vainfo
 ```
 Then in chromium type in the adressbar `chrome://flags/#enable-accelerated-video` and enable it and maybe zero-copy too etc. 
@@ -142,6 +142,6 @@ Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/
 
 - **Checking if chromium actually uses the video card**
 
-Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box `video_decoder GpuVideoDecoder` should be the status - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere.
+Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box - somewhere you will find `video_decoder` and `GpuVideoDecoder` should be the status - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere.
 
 
