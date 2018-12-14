@@ -142,6 +142,6 @@ Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/
 
 - **Checking if chromium actually uses the video card**
 
-Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box - somewhere you will find `video_decoder` and `GpuVideoDecoder` should be the status - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere.
+Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box - somewhere you will find `video_decoder` and `GpuVideoDecoder` should be the value of the field - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check vainfo and vdpauinfo for outputs first...)
 
 
