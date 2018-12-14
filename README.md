@@ -1,5 +1,5 @@
 # ffmpeg-ffnvcodec-explanation
-how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC/NVDEC
+how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC
 
 
 **1. Install the nv-codec-headers package:**
@@ -54,7 +54,7 @@ sudo apt-get install obs-studio
 ```
 
 
-**4. Build MPV to use NVDEC for movie viewing**
+**4. Build MPV to use NVDEC for movie decoding**
 ```
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
@@ -64,5 +64,7 @@ debuild -us -uc -b
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
+...
+mpv --hwdec=nvdec input
 ```
-enJOY
+
