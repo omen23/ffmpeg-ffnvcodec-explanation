@@ -75,7 +75,7 @@ rm libavcodec58* # creates package conflicts - if ffmpeg complains about library
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg libavcodec-dev libavcodec-extra58 libavfilter-dev libavformat58 libavresample-dev libavutil-dev libavutil56
 ```
-Should `debuild` fail make sure the files are "yours" -> `chown -hR $USER:$USER *` in the ffmpeg source-tree
+Should `debuild` fail make sure the files are "yours" and dont belong to user `root` -> `sudo chown -hR $USER:$USER *` in the ffmpeg source-tree
 
 - **Testing:**
 ```
