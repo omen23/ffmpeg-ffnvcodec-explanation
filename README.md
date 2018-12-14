@@ -1,5 +1,5 @@
 # ffmpeg-ffnvcodec-explanation
-How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium.
+How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium.
 Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
 **0. Get Nvidia's proprietary driver:**
