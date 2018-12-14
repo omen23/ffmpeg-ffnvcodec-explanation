@@ -1,5 +1,5 @@
 # ffmpeg-ffnvcodec-explanation
-how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures
+how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and get the most out of your video card
 https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
 **0. Get Nvidia's proprietary driver:**
@@ -125,4 +125,19 @@ sudo apt-mark hold mpv
 ...
 mpv --hwdec=nvdec input
 ```
+**5. Use hardware-acceleration enabled chromium**
+Thanks to the author (Saikrishna Arcot) who patched chromium against vaapi (you'll need the vdpau-va-driver)
+```
+sudo add-apt-repository ppa:saiarcot895/chromium-dev
+sudo apt-get update
+sudo apt install vdpau-va-driver chromium-browser vdpauinfo vainfo
+```
+Then in chromium type in the adressbar `chrome://flags/#enable-accelerated-video` and enable it and maybe zero-copy too etc. 
+Check out `chrome://gpu` or `about:gpu` to see what configuration works best for you (e.g. on my system out of process rasterization doesn't work well and GpuMemoryBuffers are only implemented in software)
+Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
+(even you now have a system that could offload VP9 decoding to the video card it is not implemented in any browser)
+
+- **Checking if chromium actually uses the video card**
+Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube file and click on the box `video_decoder GpuVideoDecoder` should be the status - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere.
+https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
 
