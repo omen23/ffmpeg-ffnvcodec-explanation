@@ -2,7 +2,7 @@
 how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures
 https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
-**0. Get Nvidia's proprietary blob:**
+**0. Get Nvidia's proprietary driver:**
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get install nvidia-driver-415
