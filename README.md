@@ -1,6 +1,12 @@
 # ffmpeg-ffnvcodec-explanation
-how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC
+how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC and NVDEC on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures
+https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
+**0. Get Nvidia's proprietary blob:**
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get install nvidia-driver-415
+```
 
 **1. Install the nv-codec-headers package:**
 
@@ -10,6 +16,19 @@ mkdir -p ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
 make && sudo make install
+```
+```
+FFmpeg version of headers required to interface with Nvidias codec APIs.
+
+Corresponds to Video Codec SDK version 8.2.15.
+
+Minimum required driver versions:
+Linux: 396.24 or newer
+Windows: 397.93 or newer
+
+Optional CUDA 10 features:
+Linux: 410.48 or newer
+Windows: 411.31 or newer
 ```
 
 **2. Compile FFmpeg:**
