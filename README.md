@@ -59,6 +59,7 @@ ffmpeg will automatically detect the ffnvcodec-headers — extract from `./confi
   --disable-videotoolbox   disable VideoToolbox code [autodetect]
 ```
 
+Should the standard compilation not fit your needs (you have the need to link in specific libraries/dont need some libraries or enable/disable specific features) then you can change the build-rules in ~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules
 ```
 sudo apt-get build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
@@ -71,7 +72,6 @@ rm libavcodec58*
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg libavcodec-dev libavcodec-extra58 libavfilter-dev libavformat58 libavresample-dev libavutil-dev libavutil56
 ```
-Should the standard compilation not fit your needs (you have the need to link in specific libraries/dont need some libraries or enable/disable specific features) then you can change the build-rules in `~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules`
 
 - **Testing:**
 ```
