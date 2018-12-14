@@ -18,7 +18,7 @@ sudo apt-get build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt-get source ffmpeg
-cd ffmpeg-4.0.2 #cd ffmpeg-x.x.x [x.x.x represents the version number]
+cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number]
 debuild -us -uc -b
 cd ..
 rm libavcodec58*
@@ -47,7 +47,7 @@ $ ffmpeg -hide_banner -decoders | grep cuvid
 
 **3. Install OBS (no need to compile)** 
 ```
-sudo apt-get install ppa-purge #for safety
+sudo apt-get install ppa-purge # for safety
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt-get update
 sudo apt-get install obs-studio
@@ -59,10 +59,10 @@ sudo apt-get install obs-studio
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt-get source mpv
-cd mpv-0.29.0 #cd mpv-x.x.x [x.x.x represents version]
+cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
 debuild -us -uc -b
 cd ..
-sudo dpkg -i mpv*.deb # dont need libmpv{-dev}
+sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
 ```
 enJOY
