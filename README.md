@@ -2,14 +2,6 @@
 how to get ffmpeg to export the needed symbols on (K)ubuntu cosmic 18.10 so OBS and MPV can use NVENC/NVDEC
 
 
-```
-In file included from nasmlib/crc64.c:35:
-./include/nasmlib.h:194:1: error: ‘pure’ attribute on function returning ‘void’ [-Werror=attributes]
- void pure_func seg_init(void);
-I used yasm and it worked too
-```
-get nvenc headers and build your ffmpeg distro package from source
-
 **1. Install the nv-codec-headers package:**
 
 ```
