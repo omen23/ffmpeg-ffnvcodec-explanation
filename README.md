@@ -2,7 +2,7 @@
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium.
 Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
-**0. Get Nvidia's proprietary driver:**
+### 0. Get Nvidia's proprietary driver:
 ```
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -10,7 +10,7 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt install nvidia-driver-415
 ```
 
-**1. Install the nv-codec-headers package:**
+### 1. Install the nv-codec-headers package:
 
 ```
 sudo apt install make git
@@ -33,9 +33,9 @@ Linux: 410.48 or newer
 Windows: 411.31 or newer
 ```
 
-**2. Compile FFmpeg:**
+### 2. Compile FFmpeg:
 
-ffmpeg will automatically detect the ffnvcodec-headers — extract from `./configure --help`:
+FFmpeg will automatically detect the ffnvcodec-headers — extract from `./configure --help`:
 ```
   The following libraries provide various hardware acceleration features:
   --disable-amf            disable AMF video encoding code [autodetect]
@@ -105,7 +105,7 @@ drm
 cuvid
 ```
 
-**3. Install OBS (no need to compile)** 
+### 3. Install OBS (no need to compile): 
 ```
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
@@ -114,7 +114,7 @@ sudo apt install obs-studio
 **NOW** you should have a fully functional OBS with hardware-acceleration!
 The rest of this guide is ***optional*** (for people who want to get the most out of their GPU).
 
-**4. Build MPV to use NVDEC for video decoding**
+### 4. Build MPV to use NVDEC for video decoding:
 ```
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
@@ -125,9 +125,9 @@ cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
 ...
-mpv --hwdec=nvdec input
+mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too 
 ```
-**5. Use hardware-acceleration enabled chromium**
+### 5. Use hardware-acceleration enabled chromium:
 
 Thanks to Saikrishna Arcot who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
@@ -141,6 +141,6 @@ Check out `chrome://gpu` or `about:gpu` to see what configuration works best for
 Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 (even you now have a system that could offload VP9 decoding to the video card it is not implemented in any browser)
 
-- **Checking if chromium actually uses the video card**
+- **Checking if chromium actually uses the video card:**
 
-Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check vainfo and vdpauinfo for outputs first...)
+Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check `vainfo` and `vdpauinfo` outputs for errors first...)
