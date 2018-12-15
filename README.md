@@ -137,10 +137,10 @@ sudo apt update
 sudo apt install vdpau-va-driver chromium-browser vdpauinfo vainfo
 ```
 Then in chromium type in the adressbar `chrome://flags/#enable-accelerated-video` and enable it and maybe zero-copy too etc. 
-Check out `chrome://gpu` or `about:gpu` to see what configuration works best for you (e.g. on my system out of process rasterization doesn't work well and GpuMemoryBuffers are only implemented in software as of now 14-12-2018)
+Check out `chrome://gpu` or `about:gpu` to see what configuration works best for you (e.g. on my system out of process rasterization doesn't work well and GpuMemoryBuffers are only implemented in software as of now 14-12-2018).
 Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
-(even you now have a system that could offload VP9 decoding to the video card it is not implemented in any browser)
+(even you now have a system that could offload VP9 decoding to the video card it is not implemented in any browser – protip: **use mpv to play youtube videos and use VP9 offloading via NVDEC**).
 
 - **Checking if chromium actually uses the video card:**
 
-Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value - if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check `vainfo` and `vdpauinfo` outputs for errors first...)
+Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value – if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check `vainfo` and `vdpauinfo` outputs for errors first...)
