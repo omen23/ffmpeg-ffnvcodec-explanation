@@ -62,11 +62,10 @@ FFmpeg will automatically detect the ffnvcodec-headers — extract from `./confi
 
 
 Should the standard compilation not fit your needs (you have the need to link in specific libraries/dont need some libraries or you want to enable/disable specific features) then you can change the build-rules in `~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules`
-If you need libfdk-aac add `--enable-nonfree \` `--enable-libfdk-aac` to the `CONFIG :=` section of the rules file. This will change the license to nonfree an nonredistributable.
+If you need libfdk-aac add `--enable-nonfree \` `--enable-libfdk-aac` to the `CONFIG :=` section of the rules file and install `libfdk-aac-dev` (Some people think this AAC codec is better but you cant use it to stream anyways – only to record). This will change the license to nonfree an nonredistributable.
 The headers installed in **1. Install the nv-codec-headers package** will enable `ffnvcodec vdpau nvenc nvdec cuvid` (***NVDEC is just a rebranding of CUVID***)
 ```
 sudo apt build-dep ffmpeg
-# sudo apt install libfdk-aac-dev # if you need libfdk-aac
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
