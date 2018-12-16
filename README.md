@@ -77,11 +77,12 @@ nano debian/rules
 # --enable libfdk-aac to the CONFIG := 
 debuild -us -uc -b
 cd ..
-rm libavcodec58* # creates package conflicts - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
+rm libavcodec58* # creates package conflicts - we have the extra - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
+rm libavfilter7* # creates package conflicts - we have the extra
 # you can: alias ffmpeg='ffmpeg -hide_banner' if you think your terminal gets too cluttered with debug messages
 # put it in your ~/.bashrc to make it permanent
 sudo dpkg -i *.deb
-sudo apt-mark hold ffmpeg libavcodec-dev libavcodec-extra58 libavfilter-dev libavformat58 libavresample-dev libavutil-dev libavutil56
+sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec-extra58 libavcodec-extra libavfilter-extra7 libavfilter-dev libavfilter-extra libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
 Should `debuild` fail make sure the files are "yours" and don't belong to user `root` -> change ownership `sudo chown -hR $USER:$USER *` in the ffmpeg source-tree folder.
 
