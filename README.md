@@ -108,6 +108,7 @@ cuvid
 ```
 
 ### 3. Install OBS (no need to compile): 
+OBS detects if FFmpeg exports `h264_nvenc` dynamically at runtime startup if GPU-acceleration was not disabled at build-time. 
 ```
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo apt update
