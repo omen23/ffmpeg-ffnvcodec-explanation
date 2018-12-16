@@ -60,14 +60,21 @@ FFmpeg will automatically detect the ffnvcodec-headers — extract from `./confi
   --disable-videotoolbox   disable VideoToolbox code [autodetect]
 ```
 
+
 Should the standard compilation not fit your needs (you have the need to link in specific libraries/dont need some libraries or you want to enable/disable specific features) then you can change the build-rules in `~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules`
 The headers installed in **1. Install the nv-codec-headers package** will enable `ffnvcodec vdpau nvenc nvdec cuvid` (***NVDEC is just a rebranding of CUVID***)
 ```
 sudo apt build-dep ffmpeg
+sudo apt install libx264-dev libfdk-aac-dev
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number]
+# use your editor of choice and add
+nano debian/rules
+# --enable-libx264 \
+# --enable-nonfree \
+# --enable libfdk-aac to the CONFIG := 
 debuild -us -uc -b
 cd ..
 rm libavcodec58* # creates package conflicts - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
