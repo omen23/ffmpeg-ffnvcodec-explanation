@@ -69,13 +69,7 @@ sudo apt install libx264-dev libfdk-aac-dev
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
-cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number]
-# use your editor of choice and add
-nano debian/rules
-# add these line (last line has no backslash) to CONFIG := 
-# --enable-libx264 \
-# --enable-nonfree \
-# --enable libfdk-aac 
+cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild -us -uc -b
 cd ..
 rm libavcodec58* # creates package conflicts - we have the extra - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
