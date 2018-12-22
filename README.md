@@ -128,8 +128,15 @@ cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
 ...
-mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too 
+mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too
 ```
+This is my `/etc/mpv/mpv.conf`:
+```
+hwdec=yes
+vd=h264_cuvid,hevc_cuvid,mjpeg_cuvid,mpeg1_cuvid,mpeg2_cuvid,mpeg4_cuvid,vc1_cuvid,vp8_cuvid,vp9_cuvid
+ad=libfdk_aac
+```
+
 ### 5. Use hardware-acceleration enabled chromium:
 
 Thanks to Saikrishna Arcot who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
