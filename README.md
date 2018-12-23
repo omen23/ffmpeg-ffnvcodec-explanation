@@ -145,7 +145,7 @@ Check out `chrome://gpu` or `about:gpu` to see what configuration works best for
 Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 (even you now have a system that could offload VP9 decoding to the video card – it is not implemented in any browser.)
 
-**Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**).
+**Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**.
 
 - **Checking if chromium actually uses the video card:**
 
