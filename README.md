@@ -143,7 +143,7 @@ sudo apt install vdpau-va-driver chromium-browser vdpauinfo vainfo
 Then in chromium type in the adressbar `chrome://flags/#enable-accelerated-video` and enable it and maybe zero-copy too etc. 
 Check out `chrome://gpu` or `about:gpu` to see what configuration works best for you (e.g. on my system out of process rasterization doesn't work well and GpuMemoryBuffers are only implemented in software as of now 14-12-2018).
 Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
-(even you now have a system that could offload VP9 decoding to the video card it is not implemented in any browse.
+(even you now have a system that could offload VP9 decoding to the video card – it is not implemented in any browser.)
 
 **Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**).
 
