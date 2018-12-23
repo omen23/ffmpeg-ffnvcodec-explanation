@@ -130,7 +130,15 @@ sudo apt-mark hold mpv
 ...
 mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too
 ```
+**Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**. 
 
+Just add `youtube-dl` to your system:
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install youtube-dl
+```
+Now you can watch youtube videos and livestreams (*e.g. twitch.tv*) with hardware-acceleration too — use `mpv URL ...`
 ### 5. Use hardware-acceleration enabled chromium:
 
 Thanks to Saikrishna Arcot who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
@@ -144,8 +152,6 @@ Then in chromium type in the adressbar `chrome://flags/#enable-accelerated-video
 Check out `chrome://gpu` or `about:gpu` to see what configuration works best for you (e.g. on my system out of process rasterization doesn't work well and GpuMemoryBuffers are only implemented in software as of now 14-12-2018).
 Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 (even you now have a system that could offload VP9 decoding to the video card – it is not implemented in any browser.)
-
-**Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**.
 
 - **Checking if chromium actually uses the video card:**
 
