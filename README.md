@@ -1,4 +1,5 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            acceleration in Chromium by oMeN23 © 201–ä8.
+# ffmpeg-ffnvcodec-explanation
+How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium © *2018 - 2019 oMeN23*.
 Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
 ### 0. Get Nvidia's proprietary driver:
@@ -144,18 +145,8 @@ Check out `chrome://gpu` or `about:gpu` to see what configuration works best for
 Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 (even you now have a system that could offload VP9 decoding to the video card – it is not implemented in any browser.)
 
-**Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**. 
-
-Just add `youtube-dl to your system with the following linee:
-```
-sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt update
-sudo apt install youtube-dl
-```
-Now you can watch youtube videos and livestreams (*e.g. twitch.tv*) too — use `mpv URL ...`
+**Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**.
 
 - **Checking if chromium actually uses the video card:**
 
 Go to `chrome://media-internals` or `about:media-internals` when h264ify is enabled, play a youtube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value – if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check `vainfo` and `vdpauinfo` outputs for errors first...)
-
-If you have questions regarding this manual, something doesn't work for you or you want a more detailed explanation of one of the steps – just open a new issue.
