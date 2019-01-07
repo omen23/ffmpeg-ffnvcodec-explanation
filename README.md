@@ -123,6 +123,7 @@ The rest of this guide is ***optional*** (for people who want to get the most ou
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
+sudo apt build-dep mpv
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
 debuild -us -uc -b
 cd ..
