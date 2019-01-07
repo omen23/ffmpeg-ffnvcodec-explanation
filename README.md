@@ -120,10 +120,10 @@ The rest of this guide is ***optional*** (for people who want to get the most ou
 
 ### 4. Build MPV to use NVDEC for video decoding:
 ```
+sudo apt build-dep mpv
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
-sudo apt build-dep mpv
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
 debuild -us -uc -b
 cd ..
@@ -140,7 +140,7 @@ sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
 sudo apt install youtube-dl
 ```
-Now you can watch youtube videos and livestreams (*e.g. twitch.tv*) with hardware-acceleration too — use `mpv URL ...`
+Now you can watch youtube videos and livestreams *(e.g. twitch.tv)* with hardware-acceleration too — use `mpv URL ...`
 ### 5. Use hardware-acceleration enabled chromium:
 
 Thanks to Saikrishna Arcot (https://github.com/saiarcot895) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
