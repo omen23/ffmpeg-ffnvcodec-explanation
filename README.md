@@ -79,7 +79,7 @@ rm libavfilter7* # creates package conflicts - we have the extra
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec-extra58 libavcodec-extra libavfilter-extra7 libavfilter-dev libavfilter-extra libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
-Should `debuild` fail — make sure the files are "yours" and don't belong to user `root` --> change ownership `sudo chown -hR $USER:$USER *` in the ffmpeg source-tree folder.
+Should `debuild` fail — make sure the files are "yours" and don't belong to user `root` → change ownership `sudo chown -hR $USER:$USER *` in the ffmpeg source-tree folder.
 
 - **Testing:**
 ```
@@ -129,11 +129,11 @@ cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
 ...
-mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too - just tweak your configuration file
+mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too – just tweak your configuration file
 ```
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
-Just add `youtube-dl` to your system:
+Add `youtube-dl` to your system:
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
