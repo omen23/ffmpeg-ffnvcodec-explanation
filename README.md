@@ -63,7 +63,7 @@ FFmpeg will automatically detect the ffnvcodec-headers — extract from `./confi
 
 
 Should the standard compilation not fit your needs (you have the need to link in specific libraries/don't need some libraries or you want to enable/disable specific features) then you can change the build-rules in `~/devel/ffmpeg/ffmpeg-4.0.2/debian/rules`.
-The headers installed in **1. Install the nv-codec-headers package** will enable `ffnvcodec vdpau nvenc nvdec cuvid` (***NVDEC is just a rebranding of CUVID***).
+The headers installed in **1. Install the nv-codec-headers package** will enable `ffnvcodec vdpau nvenc nvdec cuda cuvid` (***NVDEC is just a rebranding of CUVID***). CUDA does not mean the CUDA-SDK code – just hardware-acceleration via CUDA.
 ```
 sudo apt build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
