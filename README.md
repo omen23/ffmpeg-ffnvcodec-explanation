@@ -129,7 +129,7 @@ cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
 ...
-mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too
+mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too - just tweak your configuration file
 ```
 **Protip:** **use mpv to play youtube videos with NVDEC VP9 decoding**. 
 
