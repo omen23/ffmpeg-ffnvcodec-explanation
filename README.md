@@ -161,7 +161,7 @@ Install the h264ify extension https://chrome.google.com/webstore/detail/h264ify/
 Go to chrome://media-internals or about:media-internals when h264ify is enabled, play a youtube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value – if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check `vainfo` and `vdpauinfo` outputs for errors first...)
 
 #### edit 16-01-2019: 
-video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra).
+video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra):
 ```
 mkdir chromium && cd chromium
 wget https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-codecs-ffmpeg-extra_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser-l10n_73.0.3642.0-0ubuntu1~ppa4~18.10.1_all.deb
