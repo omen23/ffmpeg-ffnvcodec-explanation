@@ -155,7 +155,7 @@ cd ..
 rm -rf chromium
 ```
 But maybe we soon can use the official [chromium build](https://github.com/chromium/chromium/commit/31225b9c5f3f685d65f742dc129241c30c32157c).
-
+___
 
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
 ```
