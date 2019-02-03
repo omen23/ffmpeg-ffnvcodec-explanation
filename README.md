@@ -179,4 +179,4 @@ Tested on a GeForce GTX 1070 system. If you have \*\***ANY**\*\* questions regar
 #### Donations
 If this manual helped you out in any way and you wanna support me by buying a cup of coffee or a little something [\*\***donate here\*\***](https://www.streamlabs.com/omen235). 
 
-**Thank you in advance!**
+***Thank you in advance!***
