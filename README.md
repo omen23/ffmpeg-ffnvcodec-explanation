@@ -177,6 +177,6 @@ Go to `chrome://media-internals` or `about:media-internals` when **h264ify** is 
 
 Tested on a GeForce GTX 1070 system. If you have \*\***ANY**\*\* questions regarding this manual or something doesn't work out of the box for you or you want a more detailed explanation of one of the topics/steps — just open a new issue.
 #### Donations
-If this manual helped you out in any way and you wanna support me by buying a cup of coffee or a little something [donate here](https://www.streamlabs.com/omen235). 
+If this manual helped you out in any way and you wanna support me by buying a cup of coffee or a little something [\**donate here\**](https://www.streamlabs.com/omen235). 
 
 **Thank you in advance!**
