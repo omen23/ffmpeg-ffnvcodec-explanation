@@ -148,15 +148,16 @@ ___
 #### edit 16-01-2019: 
 video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra):
 ```
+sudo apt install vainfo vdpauinfo vdpau-va-driver
 mkdir chromium && cd chromium
 wget https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-codecs-ffmpeg-extra_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser-l10n_73.0.3642.0-0ubuntu1~ppa4~18.10.1_all.deb
 sudo dpkg -i *.deb
 sudo apt-mark hold chromium-browser # chromium package now set on hold and won't be upgraded - use unhold to go back to updating – some packages are worth keeping (like our own FFmpeg build)
-sudo apt install vainfo vdpauinfo vdpau-va-driver
 cd ..
 rm -rf chromium
 ```
 But maybe we soon can use the official [chromium build](https://github.com/chromium/chromium/commit/31225b9c5f3f685d65f742dc129241c30c32157c).
+**Don't update to the newest version of the PPA atm if you got a Nvidia card - you still might need `vdpau-va-driver` from the repo`.**
 ___
 
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
