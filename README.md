@@ -157,7 +157,7 @@ cd ..
 rm -rf chromium
 ```
 But maybe we soon can use the official [chromium build](https://github.com/chromium/chromium/commit/31225b9c5f3f685d65f742dc129241c30c32157c).
-**Don't update to the newest version of the PPA atm if you got a Nvidia card - you still might need `vdpau-va-driver` from the repo`.**
+**Don't update to the newest version of the PPA atm if you got a Nvidia card - you still might need `vdpau-va-driver` from the repo.**
 ___
 
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
