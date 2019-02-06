@@ -147,11 +147,12 @@ Thanks to [Saikrishna Arcot](https://github.com/saiarcot895) who patched chromiu
 ___
 #### edit 06-02-2019: 
 video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra):
+**I have hosted the last [working version here](https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar)**
 ```
 sudo apt install vainfo vdpauinfo vdpau-va-driver
 mkdir chromium && cd chromium
 #wget https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-codecs-ffmpeg-extra_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser-l10n_73.0.3642.0-0ubuntu1~ppa4~18.10.1_all.deb
-# I hosted the latest working versions here https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar - download
+# I hosted the latest working versions here https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar
 rar e chromium_*.rar
 sudo dpkg -i chromium-*.deb
 sudo apt-mark hold chromium-browser # chromium package now set on hold and won't be upgraded - use unhold to go back to updating – some packages are worth keeping (like our own FFmpeg build)
