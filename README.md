@@ -145,13 +145,15 @@ Now you can watch youtube videos and livestreams *(e.g. twitch.tv)* with hardwar
 
 Thanks to [Saikrishna Arcot](https://github.com/saiarcot895) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
 ___
-#### edit 16-01-2019: 
+#### edit 06-02-2019: 
 video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra):
 ```
 sudo apt install vainfo vdpauinfo vdpau-va-driver
 mkdir chromium && cd chromium
-wget https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-codecs-ffmpeg-extra_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser-l10n_73.0.3642.0-0ubuntu1~ppa4~18.10.1_all.deb
-sudo dpkg -i *.deb
+#wget https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-codecs-ffmpeg-extra_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser-l10n_73.0.3642.0-0ubuntu1~ppa4~18.10.1_all.deb
+# I hosted the latest working versions here https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar - download
+rar e chromium_*.rar
+sudo dpkg -i chromium-*.deb
 sudo apt-mark hold chromium-browser # chromium package now set on hold and won't be upgraded - use unhold to go back to updating – some packages are worth keeping (like our own FFmpeg build)
 cd ..
 rm -rf chromium
