@@ -70,7 +70,7 @@ mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
-debuild --no-sign -b
+debuild --no-sign -b # use --no-sign instead of -us -uc
 cd ..
 rm libavcodec58* # creates package conflicts - we have the extra - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
 rm libavfilter7* # creates package conflicts - we have the extra
