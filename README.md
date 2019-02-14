@@ -147,7 +147,7 @@ Thanks to [Saikrishna Arcot](https://github.com/saiarcot895) who patched chromiu
 ___
 #### edit 06-02-2019: 
 video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra):
-**I have hosted the last [working version here](https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar) (I know OpenLoad seems a little sketchy but if you got a Linux box with adblock nothing will happen, w/o adblock you get annoying pop-ups/on Windows I would not risk it without some form of adblock**
+**I have hosted the last [working version here.](https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar) (I know OpenLoad seems a little sketchy but if you got a Linux box with adblock nothing will happen, w/o adblock you get annoying pop-ups/on Windows I would not risk it without some form of adblock)**
 ```
 sudo apt install vainfo vdpauinfo vdpau-va-driver
 mkdir chromium && cd chromium
