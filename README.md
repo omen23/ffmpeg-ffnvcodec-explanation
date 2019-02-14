@@ -125,7 +125,7 @@ mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
-debuild -us -uc -b
+debuild --no-sign -b # use --no-sign instead -us -uc
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
