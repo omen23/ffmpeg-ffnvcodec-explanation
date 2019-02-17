@@ -29,7 +29,7 @@ Minimum required driver versions:
 Linux: 418.30 or newer
 Windows: 418.81 or newer
 ```
-**Before rolling new versions of FFmpeg always check if your distro has a driver available – otherwise get the installer from the NV website. (then step 0. is not neccesary but I don't recommend using the binary installer except you know what you are doing – staying within the boundaries of the distros packaging system it's way harder to break your whole system)**
+**Before rolling new versions of FFmpeg always check if your distro has a driver available – otherwise get the installer from the NV website. (then step 0. is not neccesary but I don't recommend using the binary installer except you know what you are doing – staying within the boundaries of the distros packaging system is way safer and it is harder to break your whole display configuration)**
 
 ### 2. Compile FFmpeg:
 
