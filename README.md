@@ -18,18 +18,23 @@ sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
+git checkout n8.2.15.7 # for drivers 415.x and older 
 make && sudo make install
 ```
 ```
 FFmpeg version of headers required to interface with Nvidias codec APIs.
 
-Corresponds to Video Codec SDK version 9.0.18.
+Corresponds to Video Codec SDK version 8.2.15.
 
 Minimum required driver versions:
-Linux: 418.30 or newer
-Windows: 418.81 or newer
+Linux: 396.24 or newer
+Windows: 397.93 or newer
+
+Optional CUDA 10 features:
+Linux: 410.48 or newer
+Windows: 411.31 or newer
+
 ```
-**Before rolling new versions of FFmpeg always check if your distro has a driver available – otherwise get the installer from the NV website. (then step 0. is not neccesary but I don't recommend using the binary installer except you know what you are doing – staying within the boundaries of the distros packaging system is way safer and it is harder to break your whole display configuration)**
 
 ### 2. Compile FFmpeg:
 
