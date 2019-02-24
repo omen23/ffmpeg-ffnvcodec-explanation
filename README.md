@@ -18,7 +18,7 @@ sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
-git checkout n8.2.15.7 # for drivers 415.x and older 
+git checkout n8.2.15.7 # for drivers 415.x and older # remove this line once 418 branch gets pushed to GPU PPA
 make && sudo make install
 ```
 ```
