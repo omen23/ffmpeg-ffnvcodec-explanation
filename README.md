@@ -7,7 +7,7 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 ```
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
-# please check the support plan for your GPU – nvidia-driver-{390,396,410,415} available so your display server doesn't fail!
+# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418} available so your display server doesn't fail!
 sudo apt install nvidia-driver-418
 ```
 
