@@ -75,7 +75,7 @@ rm libavfilter7* # creates package conflicts - we have the extra
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec-extra58 libavcodec-extra libavfilter-extra7 libavfilter-dev libavfilter-extra libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
-Should `debuild` fail — make sure the files are "yours" and don't belong to user `root` → change ownership `sudo chown -hR $USER:$USER *` in the FFmpeg source-tree folder.
+Should `debuild` fail — make sure the files are "yours" and don't belong to user `root` → change ownership `sudo chown -hR $USER:$USER *` in the folder containing the downloaded files *(FFmpeg source-tree folder, .dsc amd a .tar.xz)*.
 
 - **Testing:**
 ```
