@@ -66,7 +66,7 @@ sudo apt build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
-sudo chown -hR $USER:$USER *
+sudo chown -hR $USER:$USER * # atleast my distro has problems when unpacking source – so we change ownership
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild --no-sign -b # use --no-sign instead of -us -uc
 cd ..
