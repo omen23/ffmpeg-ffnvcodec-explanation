@@ -146,24 +146,6 @@ Now you can watch youtube videos and livestreams *(e.g. twitch.tv)* with hardwar
 ### 5. Use hardware-acceleration enabled chromium:
 
 Thanks to [Saikrishna Arcot](https://github.com/saiarcot895) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
-___
-#### edit 06-02-2019: 
-video acceleration is broken atm - the last package from the dev ppa that works is [73.0.3642.0-0ubuntu1\~ppa4\~18.10.1](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+sourcepub/9813431/+listing-archive-extra):
-**I have hosted the last [working version here.](https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar) (I know OpenLoad seems a little sketchy but if you got a Linux box with adblock nothing will happen, w/o adblock you get annoying pop-ups/on Windows I would not risk it without some form of adblock)**
-```
-sudo apt install vainfo vdpauinfo vdpau-va-driver
-mkdir chromium && cd chromium
-#wget https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-codecs-ffmpeg-extra_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser_73.0.3642.0-0ubuntu1~ppa4~18.10.1_amd64.deb https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-dev/+files/chromium-browser-l10n_73.0.3642.0-0ubuntu1~ppa4~18.10.1_all.deb
-# I hosted the latest working versions here https://openload.co/f/yHhF3W0OmPY/chromium_73.0.3642.0-0ubuntu1-ppa4.rar
-rar e chromium_*.rar
-sudo dpkg -i chromium-*.deb
-sudo apt-mark hold chromium-browser # chromium package now set on hold and won't be upgraded - use unhold to go back to updating – some packages are worth keeping (like our own FFmpeg build)
-cd ..
-rm -rf chromium
-```
-But maybe we soon can use the official [chromium build](https://github.com/chromium/chromium/commit/31225b9c5f3f685d65f742dc129241c30c32157c).
-**Don't update to the newest version of the PPA atm if you got a Nvidia card - you still might need `vdpau-va-driver` from the repo.**
-___
 
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
 ```
