@@ -8,7 +8,7 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
 # please check the support plan for your GPU – nvidia-driver-{390,396,410,415} available so your display server doesn't fail!
-sudo apt install nvidia-driver-415
+sudo apt install nvidia-driver-418
 ```
 
 ### 1. Install the nv-codec-headers package:
@@ -18,22 +18,16 @@ sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
-git checkout n8.2.15.7 # for drivers 415.x and older # remove this line once 418 branch gets pushed to GPU PPA
 make && sudo make install
 ```
 ```
 FFmpeg version of headers required to interface with Nvidias codec APIs.
 
-Corresponds to Video Codec SDK version 8.2.15.
+Corresponds to Video Codec SDK version 9.0.18.
 
 Minimum required driver versions:
-Linux: 396.24 or newer
-Windows: 397.93 or newer
-
-Optional CUDA 10 features:
-Linux: 410.48 or newer
-Windows: 411.31 or newer
-
+Linux: 418.30 or newer
+Windows: 418.81 or newer
 ```
 
 ### 2. Compile FFmpeg:
