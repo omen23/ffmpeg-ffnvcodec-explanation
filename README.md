@@ -155,7 +155,7 @@ Install the [h264ify extension](https://chrome.google.com/webstore/detail/h264if
 
 - **Checking if chromium actually uses the video card:**
 
-Go to `chrome://media-internals` or `about:media-internals` when **h264ify** is **enabled** *(the video is delivered in `avc1` not `vp9` – you find that info in the `Stats for nerds` box when right clicking on a video)*, play a YouTube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `GpuVideoDecoder` should be its value – if it is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. (check `vainfo` and `vdpauinfo` outputs for errors first...)
+Go to `chrome://media-internals` or `about:media-internals` when **h264ify** is **enabled** *(the video is delivered in `avc1` not `vp9` – you find that info in the `Stats for nerds` box when right clicking on a video)*, play a YouTube video and click on the box that says `(PLAY)` at the bottom right and in the `Player Properties` you will find the `video_decoder` field and `MojoVideoDecoder` should be its value (in `nvidia-settings` **Video Engine Utilization** will rise if you play a video) – if it the value of the field is `FFmpegVideoDecoder` or `VpxVideoDecoder` you have an error somewhere. *(check `vainfo` and `vdpauinfo` outputs for errors first...)*
 
 
 Tested on a GeForce GTX 1070 system. If you have \*\***ANY**\*\* questions regarding this manual or something doesn't work out of the box for you or you want a more detailed explanation of one of the topics/steps — just open a new issue.
