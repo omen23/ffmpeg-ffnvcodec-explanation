@@ -65,6 +65,7 @@ sudo apt build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
+sudo chown -hR $USER:$USER *
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild --no-sign -b # use --no-sign instead of -us -uc
 cd ..
@@ -75,7 +76,6 @@ rm libavfilter7* # creates package conflicts - we have the extra
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec-extra58 libavcodec-extra libavfilter-extra7 libavfilter-dev libavfilter-extra libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
-Should `debuild` fail — make sure the files are "yours" and don't belong to user `root` → change ownership `sudo chown -hR $USER:$USER *` in the folder containing the downloaded files *(FFmpeg source-tree folder, .dsc and a .tar.xz)*.
 
 - **Testing:**
 ```
@@ -120,6 +120,7 @@ sudo apt build-dep mpv
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
+sudo chown -hR $USER:$USER *
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
 debuild --no-sign -b # use --no-sign instead of -us -uc
 cd ..
