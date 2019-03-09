@@ -24,17 +24,6 @@ cd nv-codec-headers
 #git checkout nx.x.xx.x # [x.x.xx.x represents version] apply older branch fix here if you use a legacy driver
 make && sudo make install
 ```
-
-- **List of git branches for the legacy drivers**
-
-If you use legacy drivers here are the branches for the legacy drivers – after you clone the git repository `cd` into it and enter one of the three following lines before installing *(entering `make && sudo make install`)*:
-Curious what will happen if you use the newest SDK headers with a legacy drivers – the dynamic linker will not find the entrypoint and your application will just fail.
-*all of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux*
-```
-git checkout n8.0.14.9 # for Linux 378.13 or newer 
-git checkout n8.1.24.9 # for Linux 390.25 or newer
-git checkout n8.2.15.8 # for Linux 396.24 or newer
-```
 ```
 FFmpeg version of headers required to interface with Nvidias codec APIs.
 
@@ -44,6 +33,19 @@ Minimum required driver versions:
 Linux: 418.30 or newer
 Windows: 418.81 or newer
 ```
+
+- **List of git branches for the legacy drivers**
+
+If you use legacy drivers here are the branches for the legacy drivers – after you clone the git repository `cd` into it and enter one of the three following lines before installing *(entering `make && sudo make install`)*:
+Curious what will happen if you use the newest SDK headers with a legacy drivers – the dynamic linker will not find the entrypoint and your application will just fail.
+
+*All of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux.*
+```
+git checkout n8.0.14.9 # for Linux 378.13 or newer 
+git checkout n8.1.24.9 # for Linux 390.25 or newer
+git checkout n8.2.15.8 # for Linux 396.24 or newer
+```
+
 
 ### 2. Compile FFmpeg:
 
