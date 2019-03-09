@@ -9,7 +9,7 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
 # please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418} available so your display server doesn't fail!
-sudo apt install nvidia-driver-418
+sudo apt install nvidia-driver-418 xserver-xorg-video-nvidia-418 nvidia-utils-418 nvidia-kernel-source-418 nvidia-kernel-common-418 nvidia-dkms-418 nvidia-compute-utils-418 libnvidia-ifr1-418 libnvidia-gl-418 libnvidia-fbc1-418 libnvidia-encode-418 libnvidia-decode-418 libnvidia-cfg1-418 libnvidia-compute-418
 ```
 
 ### 1. Install the nv-codec-headers package:
