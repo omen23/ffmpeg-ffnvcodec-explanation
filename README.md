@@ -72,7 +72,7 @@ DEB_BUILD_OPTIONS='parallel=4' debuild --no-sign -b
 cd ..
 rm libavcodec-extra_4.0.2-2_all.deb libavfilter-extra_4.0.2-2_all.deb libavfilter-extra7_4.0.2-2_amd64.deb libavcodec-extra58_4.0.2-2_amd64.deb 
 sudo dpkg -i *.deb
-sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec58 libavcodec libavfilter7 libavfilter-dev libavfilter libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
+sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec58 libavfilter7 libavfilter-dev libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
 
 - **Testing:**
