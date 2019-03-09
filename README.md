@@ -36,7 +36,7 @@ Windows: 418.81 or newer
 - **List of git branches for the legacy drivers**
 
 If you use legacy drivers, here are the branches for them – after you clone the git repository `cd` into it and enter one of the three following lines before installing *(entering `make && sudo make install`)*.
-Curious what will happen if you use the newest SDK headers with a legacy driver?  The dynamic linker will not find the entrypoint or function pointer or header and your application will just fail.
+Curious what will happen if you use the newest SDK headers with a legacy driver?  The linker/loader will not find the entrypoint or function (pointer) or header and your application will fail.
 
 *All of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux.*
 ```
