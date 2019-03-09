@@ -21,7 +21,7 @@ sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
-# git checkout n… # apply older branch fix here if you use a legacy driver
+# git checkout sdk/8.{0,1,2} # apply older branch fix here if you use a legacy driver
 make && sudo make install
 ```
 ```
@@ -41,9 +41,9 @@ Curious what will happen if you use the newest SDK headers with a legacy driver?
 
 *All of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux.*
 ```
-git checkout n8.0.14.9 # for Linux 378.13 or newer 
-git checkout n8.1.24.9 # for Linux 390.25 or newer
-git checkout n8.2.15.8 # for Linux 396.24 or newer
+git checkout sdk/8.2 # for Linux 378.13 or newer 
+git checkout sdk/8.1 # for Linux 390.25 or newer
+git checkout sdk/8.0 # for Linux 396.24 or newer
 ```
 
 
