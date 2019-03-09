@@ -2,7 +2,7 @@
 #### **\*\*last updated 09-03-2019\*\***
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
-**This guide only aims at the more modern cards compatible with NVENC and NVDEC – for cards using legacy drivers (390, 396, 410, 415) I still made a list of the branches you have to `checkout` from the videolan git to make it work.**
+**This guide only aims at the more modern cards compatible with NVENC and NVDEC – for cards using legacy drivers (390, 396, 410) I still made a list of the branches you have to `checkout` from the videolan git to make it work.**
 
 Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
