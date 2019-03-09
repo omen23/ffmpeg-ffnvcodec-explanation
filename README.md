@@ -21,7 +21,7 @@ sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
-#git checkout nx.x.xx.x # [x.x.xx.x represents version] apply older branch fix here if you use a legacy driver
+# git checkout n… # apply older branch fix here if you use a legacy driver
 make && sudo make install
 ```
 ```
@@ -37,8 +37,7 @@ Windows: 418.81 or newer
 - **List of git branches for the legacy drivers**
 
 If you use legacy drivers here are the branches for the legacy drivers – after you clone the git repository `cd` into it and enter one of the three following lines before installing *(entering `make && sudo make install`)*.
-
-Curious what will happen if you use the newest SDK headers with a legacy drivers – the dynamic linker will not find the entrypoint and your application will just fail.
+Curious what will happen if you use the newest SDK headers with a legacy driver – the dynamic linker will not find the entrypoint or function pointer or header and your application will just fail.
 
 *All of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux.*
 ```
