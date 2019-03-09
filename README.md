@@ -24,7 +24,7 @@ git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
 make && sudo make install
 ```
-If you use legacy drivers here are the branches for the legacy drivers – after you clone the git repository `cd` into it and enter before entering `make && sudo make install`:
+If you use legacy drivers here are the branches for the legacy drivers – after you clone the git repository `cd` into it and enter one of the three following lines before installing *(entering `make && sudo make install`)*:
 ```
 git checkout n8.0.14.9 # for Linux 378.13 or newer (all of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux)
 git checkout n8.1.24.9 # for Linux 390.25 or newer
