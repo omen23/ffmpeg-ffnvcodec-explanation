@@ -3,7 +3,7 @@ How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar 
 
 Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
 
-**updated 07.03.2019 – release day of nvidia 418.43 in the GPU PPA**
+**updated 07.03.2019**
 ### 0. Get Nvidia's proprietary driver:
 ```
 sudo apt install ppa-purge # for safety
