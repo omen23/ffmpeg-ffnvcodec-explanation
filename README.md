@@ -40,9 +40,9 @@ Curious what will happen if you use the newest SDK headers with a legacy driver?
 
 *All of these three branches support the optional CUDA 10 features with drivers 410.48 or newer on Linux.*
 ```
-git checkout sdk/8.2 # for Linux 378.13 or newer 
+git checkout sdk/8.2 # for Linux 396.24 or newer
 git checkout sdk/8.1 # for Linux 390.25 or newer
-git checkout sdk/8.0 # for Linux 396.24 or newer
+git checkout sdk/8.0 # for Linux 378.13 or newer
 ```
 
 
