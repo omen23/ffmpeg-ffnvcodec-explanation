@@ -66,16 +66,14 @@ sudo apt build-dep ffmpeg
 mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
-sudo chown -hR $USER:$USER * # atleast my distro has problems when unpacking source – so we change ownership
+sudo chown -hR $USER: * # atleast my distro has problems when unpacking source – so we change ownership
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
-debuild --no-sign -b # use --no-sign instead of -us -uc
+threads=$((`nproc`/2))
+DEB_BUILD_OPTIONS='parallel=$threads' debuild --no-sign -b 
 cd ..
-rm libavcodec58* # creates package conflicts - we have the extra - if ffmpeg complains about library configuration mismatches don't worry, it's not broken
-rm libavfilter7* # creates package conflicts - we have the extra
-# you can: alias ffmpeg='ffmpeg -hide_banner' if you think your terminal gets too cluttered with debug messages
-# put it in your ~/.bashrc to make it permanent
+rm libavcodec-extra_4.0.2-2_all.deb libavfilter-extra_4.0.2-2_all.deb libavfilter-extra7_4.0.2-2_amd64.deb libavcodec-extra58_4.0.2-2_amd64.deb 
 sudo dpkg -i *.deb
-sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec-extra58 libavcodec-extra libavfilter-extra7 libavfilter-dev libavfilter-extra libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
+sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec58 libavcodec libavfilter7 libavfilter-dev libavfilter libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
 
 - **Testing:**
@@ -121,9 +119,10 @@ sudo apt build-dep mpv
 mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
-sudo chown -hR $USER:$USER *
+sudo chown -hR $USER: *
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
-debuild --no-sign -b # use --no-sign instead of -us -uc
+threads=$((`nproc`/2)) 
+DEB_BUILD_OPTIONS='parallel=$threads' debuild --no-sign -b 
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
