@@ -68,8 +68,7 @@ cd ~/devel/ffmpeg
 sudo apt source ffmpeg
 sudo chown -hR $USER: * # atleast my distro has problems when unpacking source – so we change ownership
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
-threads=$((`nproc`/2))
-DEB_BUILD_OPTIONS='parallel=$threads' debuild --no-sign -b 
+DEB_BUILD_OPTIONS='parallel=$((`nproc`/2))' debuild --no-sign -b 
 cd ..
 rm libavcodec-extra_4.0.2-2_all.deb libavfilter-extra_4.0.2-2_all.deb libavfilter-extra7_4.0.2-2_amd64.deb libavcodec-extra58_4.0.2-2_amd64.deb 
 sudo dpkg -i *.deb
@@ -121,8 +120,7 @@ cd ~/devel/mpv
 sudo apt source mpv
 sudo chown -hR $USER: *
 cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
-threads=$((`nproc`/2)) 
-DEB_BUILD_OPTIONS='parallel=$threads' debuild --no-sign -b 
+DEB_BUILD_OPTIONS='parallel=$((`nproc`/2))' debuild --no-sign -b 
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
