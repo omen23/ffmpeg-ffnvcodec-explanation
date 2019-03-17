@@ -85,7 +85,7 @@ sudo chown -hR $USER: * # atleast my distro has problems when unpacking source â
 cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild -b --no-sign --jobs-try=$((`nproc`/2))
 cd ..
-rm libavcodec-extra_4.0.2-2_all.deb libavfilter-extra_4.0.2-2_all.deb libavfilter-extra7_4.0.2-2_amd64.deb libavcodec-extra58_4.0.2-2_amd64.deb libavcodec-extra58-dbgsym_4.0.2-2_amd64.ddeb libavfilter-extra7-dbgsym_4.0.2-2_amd64.ddeb
+rm -f libavcodec-extra* libavfilter-extra* libavcodec-extra58*
 sudo dpkg -i *.deb
 sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec58 libavfilter7 libavfilter-dev libavformat58 libavformat-dev libavresample4 libavresample-dev libavutil-dev libavutil56 libavdevice58 libavdevice-dev libswscale5 libswscale-dev libswresample3 libswresample-dev libpostproc55 libpostproc-dev
 ```
