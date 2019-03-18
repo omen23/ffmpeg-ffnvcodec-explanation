@@ -20,7 +20,7 @@ sudo apt install make git
 mkdir ~/devel/ && cd ~/devel/
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers
-# change to older SDK branch here if you use a legacy driver – one of: git checkout sdk/8.{0,1,2} 
+# change to older SDK branch here if you use a legacy driver — one of: git checkout sdk/8.{0,1,2} 
 make && sudo make install
 ```
 ```
