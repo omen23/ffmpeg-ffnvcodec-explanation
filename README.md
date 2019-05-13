@@ -1,5 +1,5 @@
 # FFmpeg-ffnvcodec-explanation
- **\*\*last updated 13-03-2019\*\***
+ **\*\*last updated 13-05-2019\*\***
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
 **This guide aims at the more modern cards compatible with NVENC and NVDEC – but there's also a list for cards using legacy drivers. (378, 390 and 396)**
@@ -10,8 +10,8 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 ```
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
-# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418} available so your display server doesn't fail!
-sudo apt install nvidia-driver-418 xserver-xorg-video-nvidia-418 nvidia-utils-418 nvidia-kernel-source-418 nvidia-kernel-common-418 nvidia-dkms-418 nvidia-compute-utils-418 libnvidia-ifr1-418 libnvidia-gl-418 libnvidia-fbc1-418 libnvidia-encode-418 libnvidia-decode-418 libnvidia-cfg1-418 libnvidia-compute-418
+# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430} available so your display server doesn't fail!
+sudo apt install nvidia-driver-430 xserver-xorg-video-nvidia-430 nvidia-utils-430 nvidia-kernel-source-430 nvidia-kernel-common-430 nvidia-dkms-430 nvidia-compute-utils-430 libnvidia-ifr1-430 libnvidia-gl-430 libnvidia-fbc1-430 libnvidia-encode-430 libnvidia-decode-430 libnvidia-cfg1-430 libnvidia-compute-430
 ```
 
 ### 1. Install the nv-codec-headers package:
