@@ -134,7 +134,7 @@ mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
 sudo chown -hR $USER: *
-cd mpv-0.29.0 # cd mpv-x.x.x [x.x.x represents version]
+cd mpv-0.29.1 # cd mpv-x.x.x [x.x.x represents version]
 debuild -b --no-sign --jobs-try=$((`nproc`/2))  
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
