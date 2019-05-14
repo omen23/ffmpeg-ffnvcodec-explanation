@@ -1,7 +1,7 @@
 # FFmpeg-ffnvcodec-explanation
  **\*\*last updated 13-05-2019\*\***
 
-How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
+How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic/disco (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
 **This guide aims at the more modern cards compatible with NVENC and NVDEC – but there's also a list for cards using legacy drivers. (378, 390 and 396)**
 
 Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-matrix
@@ -82,7 +82,7 @@ mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
 sudo chown -hR $USER: * # atleast my distro has problems when unpacking source – so we change ownership
-cd ffmpeg-4.0.4 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
+cd ffmpeg-4.1.3 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild -b --no-sign --jobs-try=$((`nproc`/2))
 cd ..
 rm -f libavcodec-extra* libavfilter-extra*
@@ -92,13 +92,13 @@ sudo apt-mark hold ffmpeg ffmpeg-doc libavcodec-dev libavcodec58 libavfilter7 li
 
 - **Testing:**
 ```
-$ ffmpeg -hide_banner -encoders  | grep nvenc
+ffmpeg -hide_banner -encoders  | grep nvenc
  V..... h264_nvenc           NVIDIA NVENC H.264 encoder (codec h264)
  V..... nvenc                NVIDIA NVENC H.264 encoder (codec h264)
  V..... nvenc_h264           NVIDIA NVENC H.264 encoder (codec h264)
  V..... nvenc_hevc           NVIDIA NVENC hevc encoder (codec hevc)
  V..... hevc_nvenc           NVIDIA NVENC hevc encoder (codec hevc)
-$ ffmpeg -hide_banner -decoders | grep cuvid
+ffmpeg -hide_banner -decoders | grep cuvid
  V..... h264_cuvid           Nvidia CUVID H264 decoder (codec h264)
  V..... hevc_cuvid           Nvidia CUVID HEVC decoder (codec hevc)
  V..... mjpeg_cuvid          Nvidia CUVID MJPEG decoder (codec mjpeg)
@@ -108,7 +108,7 @@ $ ffmpeg -hide_banner -decoders | grep cuvid
  V..... vc1_cuvid            Nvidia CUVID VC1 decoder (codec vc1)
  V..... vp8_cuvid            Nvidia CUVID VP8 decoder (codec vp8)
  V..... vp9_cuvid            Nvidia CUVID VP9 decoder (codec vp9) 
- $ ffmpeg -hide_banner -hwaccels
+ffmpeg -hide_banner -hwaccels
 Hardware acceleration methods:
 vdpau
 cuda
