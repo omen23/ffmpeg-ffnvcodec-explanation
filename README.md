@@ -82,7 +82,7 @@ mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
 sudo chown -hR $USER: * # atleast my distro has problems when unpacking source – so we change ownership
-cd ffmpeg-4.0.2 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
+cd ffmpeg-4.0.4 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild -b --no-sign --jobs-try=$((`nproc`/2))
 cd ..
 rm -f libavcodec-extra* libavfilter-extra*
