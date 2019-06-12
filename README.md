@@ -1,5 +1,5 @@
 # FFmpeg-ffnvcodec-explanation
- **\*\*last updated 14-05-2019\*\***
+ **\*\*last updated 12-06-2019\*\***
  – updated own distro to **19.04 disco** and updated the manual 
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic/disco (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
@@ -12,6 +12,8 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
 # please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430} available so your display server doesn't fail!
+# we will use 430.26 - because 430.14 lead to hard freezes on my system atleast so I went with 418.56 until now
+# maybe you need the 32-bit versions of some libraries add ":i386" to the package name (i.e.: libnvidia-gl-430:i386)
 sudo apt install nvidia-driver-430 xserver-xorg-video-nvidia-430 nvidia-utils-430 nvidia-kernel-source-430 nvidia-kernel-common-430 nvidia-dkms-430 nvidia-compute-utils-430 libnvidia-ifr1-430 libnvidia-gl-430 libnvidia-fbc1-430 libnvidia-encode-430 libnvidia-decode-430 libnvidia-cfg1-430 libnvidia-compute-430
 ```
 
