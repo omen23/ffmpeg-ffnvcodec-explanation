@@ -145,6 +145,15 @@ sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
 ...
 mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too – just tweak your configuration file
+e.g.
+mpv Some.Home.Movie.mkv
+Playing: Some.Home.Movie.mkv
+ (+) Video --vid=1 (*) (h264 1280x720 29.970fps)
+ (+) Audio --aid=1 (*) (aac 2ch 44100Hz)
+Using hardware decoding (nvdec). # this line is very important, you can turn on debug output with --v
+AO: [pulse] 44100Hz stereo 2ch float
+VO: [gpu] 1280x720 => 1710x720 cuda[nv12]
+
 ```
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
