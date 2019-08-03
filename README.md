@@ -208,7 +208,7 @@ For mplayer to always use VDPAU hardware decoding you need to add
 vo=vdpau,
 vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
 ```
-to the bottom of `/etc/mplayer/mplayer.conf`
+to the bottom of `/etc/mplayer/mplayer.conf` **But beware some files work with VLC's VDPAU hardware decoding but might fail with mplayer** – the file will not be playable and you will see a message that your system is too slow to play the file but maybe this bug has been fixed, I personally was a `mplayer` user until I discovered `mpv` which is now my media player of choice because it is most versatile and has `youtube-dl` (ability to play streams) built in. No downloading and waiting – just find the link and watch the movie (if the server is fast enough).
 
 `mpv` would choose VDPAU hardware decoding automatically if the config file (`/etc/mpv/mpv.conf`) has `--hwdec=auto/yes/vdpau` in it and nvdec is not supported.
 Maybe you need to add the codec names to `mpv`'s config file but I think that is only necessary for `mplayer` and `mpv` auto detects and selects the best hardware decoding method.
