@@ -149,7 +149,7 @@ mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too – just tweak you
 e.g.
 cat /etc/mpv/mpv.conf
 stop-screensaver = "yes" # so neither xscreensaver nor session-lock (on KDE) kicks in
-hwdec=yes # use best hw-decoding method
+hwdec=yes # use best hw-decoding method (legacy cards will use hardware VDPAU decoding instead of nvdec)
 vd=h264_cuvid,hevc_cuvid,mjpeg_cuvid,mpeg1_cuvid,mpeg2_cuvid,mpeg4_cuvid,vc1_cuvid,vp8_cuvid,vp9_cuvid # FFmpeg video decoder names
 # if you compiled FFmpeg with libfdk_aac and want to use it (idk why people think it is soo much better than FFmpeg's AAC decoder)
 # ad=libfdk_aac I got this line commented out as I don't hear a better sound quality when playing back or encoding audio with libfdk_aac
@@ -162,6 +162,47 @@ Playing: Some.Home.Movie.mkv
 Using hardware decoding (nvdec). # this line is very important, you can turn on debug output with --v
 AO: [pulse] 44100Hz stereo 2ch float
 VO: [gpu] 1280x720 => 1710x720 cuda[nv12]
+
+# or you can use 
+mplayer Some.Home.Movie.mkv -vc ffh264vdpau # for legacy cards
+MPlayer 1.3.0 (Debian), built with gcc-8 (C) 2000-2016 MPlayer Team
+do_connect: could not connect to socket
+connect: No such file or directory
+Failed to open LIRC support. You will not be able to use your remote control.
+
+Playing Some.Home.Movie.mkv.
+libavformat version 58.20.100 (external)
+Mismatching header version 58.12.100
+libavformat file format detected.
+[lavf] stream 0: video (h264), -vid 0
+[lavf] stream 1: audio (aac), -aid 0
+VIDEO:  [H264]  1280x720  0bpp  29.970 fps    0.0 kbps ( 0.0 kbyte/s)
+==========================================================================
+Forced video codec: ffh264vdpau
+Opening video decoder: [ffmpeg] FFmpeg's libavcodec codec family
+libavcodec version 58.35.100 (external)
+Mismatching header version 58.18.100
+Selected video codec: [ffh264vdpau] vfm: ffmpeg (FFmpeg H.264 (VDPAU))
+==========================================================================
+Clip info:
+ COMPATIBLE_BRANDS: isomiso2avc1mp41
+ MAJOR_BRAND: isom
+ MINOR_VERSION: 512
+ ENCODER: Lavf58.20.100
+Load subtitles in ./
+==========================================================================
+Opening audio decoder: [ffmpeg] FFmpeg/libavcodec audio decoders
+AUDIO: 44100 Hz, 2 ch, floatle, 0.0 kbit/0.00% (ratio: 0->352800)
+Selected audio codec: [ffaac] afm: ffmpeg (FFmpeg AAC (MPEG-2/MPEG-4 Audio))
+==========================================================================
+AO: [pulse] 44100Hz 2ch floatle (4 bytes per sample)
+Starting playback...
+Movie-Aspect is 2.38:1 - prescaling to correct movie aspect.
+VO: [vdpau] 1280x720 => 1710x720 H.264 VDPAU acceleration 
+
+# but mpv would choose VDPAU hw-decoding automatically if the config file has --hwdec=auto/yes/vdpau in it and nvdec is not supported
+# maybe you need to add the codec names like vd=ffh264vdpau,ffhevcvdpau,ffdivxvdpau # and so on in mpv's configuration file
+# but I guess it will work with just --hwdec=auto
 ```
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
