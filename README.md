@@ -146,7 +146,7 @@ sudo apt-mark hold mpv
 ```
 ```
 mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too – just tweak your configuration file
-e.g.
+# e.g.
 cat /etc/mpv/mpv.conf
 stop-screensaver = "yes" # so neither xscreensaver nor session-lock (on KDE) kicks in
 hwdec=yes # use best hw-decoding method (legacy cards will use hardware VDPAU decoding instead of nvdec)
@@ -165,9 +165,9 @@ AO: [pulse] 44100Hz stereo 2ch float
 VO: [gpu] 1280x720 => 1710x720 cuda[nv12]
 ```
 
-#### or you can use mplayer 
+#### or you can use mplayer with VDPAU hardware-acceleration
 ```
-mplayer Some.Home.Movie.mkv -vc ffh264vdpau # for legacy cards
+mplayer Some.Home.Movie.mkv -vc ffh264vdpau # for legacy cards/some people claim VDPAU has superior image quality than NVDEC and other benefits NVDEC is lacking 
 MPlayer 1.3.0 (Debian), built with gcc-8 (C) 2000-2016 MPlayer Team
 do_connect: could not connect to socket
 connect: No such file or directory
@@ -202,10 +202,14 @@ AO: [pulse] 44100Hz 2ch floatle (4 bytes per sample)
 Starting playback...
 Movie-Aspect is 2.38:1 - prescaling to correct movie aspect.
 VO: [vdpau] 1280x720 => 1710x720 H.264 VDPAU acceleration 
-
+# for mplayer to always use VDPAU hardware decoding you need to add 
+vo=vdpau,
+vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
+# to the bottom of /etc/mplayer/mplayer.conf
 # but mpv would choose VDPAU hw-decoding automatically if the config file has --hwdec=auto/yes/vdpau in it and nvdec is not supported
-# maybe you need to add the codec names like but I think that is not necessary  vd=ffh264vdpau,ffhevcvdpau,ffdivxvdpau,ffmpeg4vdpau,ffvc1vdpau,ffmpeg1vdpau,ffmpeg2vdpau # and so on in mpv's configuration file
-# but on my test systems adding just --hwdec=yes to the configuration file or commandline was enough for mpv to use the best hardware decoding method available
+# maybe you need to add the codec names like but I think that is not necessary  vd=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau # I guess only mplayer needs the codec names
+# on my test systems adding just --hwdec=yes to the configuration file or commandline was enough for mpv to use the best hardware decoding method available
+# VLC will use VDPAU if you have hardware-decoding enabled
 ```
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
