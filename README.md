@@ -148,7 +148,7 @@ sudo apt-mark hold mpv
 mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too – just tweak your configuration file
 # e.g.
 cat /etc/mpv/mpv.conf
-stop-screensaver = "yes" # so neither xscreensaver nor session-lock (on KDE) kicks in
+stop-screensaver = "yes" # so neither xscreensaver nor session-lock (on KDE) kicks in (auto disables if you press pause)
 hwdec=yes # use best hw-decoding method (legacy cards will use hardware VDPAU decoding instead of nvdec)
 # if you compiled FFmpeg with libfdk_aac and want to use it (idk why people think it is soo much better than FFmpeg's AAC decoder)
 # ad=libfdk_aac I got this line commented out as I don't hear a better sound quality when playing back or encoding audio with libfdk_aac
