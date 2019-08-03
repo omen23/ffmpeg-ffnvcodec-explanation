@@ -1,6 +1,6 @@
 # FFmpeg-ffnvcodec-explanation
  **\*\*last updated 03-08-2019\*\***
- – updated the manual 
+ – updated the manual and add (`mplayer`) VDPAU hardware decoding guide
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic/disco (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
 **This guide aims at the more modern cards compatible with NVENC and NVDEC – but there's also some instructions for cards using legacy drivers. (378, 390 and 396)**
