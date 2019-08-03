@@ -26,6 +26,7 @@ cd nv-codec-headers
 # change to older SDK branch here if you use a legacy driver — one of: git checkout sdk/8.{0,1,2} 
 make && sudo make install
 ```
+Most recent version of the Video Codec SDK is 9.0.x. *but* **below** is a list of the older SDK branches for legacy drivers.
 ```
 FFmpeg version of headers required to interface with Nvidias codec APIs.
 
