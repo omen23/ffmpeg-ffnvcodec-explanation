@@ -157,7 +157,7 @@ sudo apt install youtube-dl
 Now you can watch youtube videos and livestreams *(e.g. twitch.tv)* with hardware-acceleration too — use `mpv URL ...`
 ### 5. Use hardware-acceleration enabled chromium:
 
-Thanks to [Saikrishna Arcot](https://github.com/saiarcot895) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the `vdpau-va-driver`).
+Thanks to [Saikrishna Arcot](https://github.com/saiarcot895) who patched chromium against VAAPI there is hardware-acceleration for Intel and Nvidia GPUs (you'll need the patched `vdpau-va-driver`).
 
 https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html (The article is a little outdated – my manual has all the latest changes covered too)
 ```
