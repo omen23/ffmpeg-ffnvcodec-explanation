@@ -143,9 +143,18 @@ debuild -b --no-sign --jobs-try=$((`nproc`/2))
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
 sudo apt-mark hold mpv
-...
+```
+```
 mpv --hwdec=nvdec <input> # --hwdec=yes or auto will work too – just tweak your configuration file
 e.g.
+cat /etc/mpv/mpv.conf
+stop-screensaver = "yes" # so neither xscreensaver nor session-lock (on KDE) kicks in
+hwdec=yes # use best hw-decoding method
+vd=h264_cuvid,hevc_cuvid,mjpeg_cuvid,mpeg1_cuvid,mpeg2_cuvid,mpeg4_cuvid,vc1_cuvid,vp8_cuvid,vp9_cuvid # FFmpeg video decoder names
+# if you compiled FFmpeg with libfdk_aac and want to use it (idk why people think it is soo much better than FFmpeg's AAC decoder)
+# ad=libfdk_aac I got this line commented out as I don't hear a better sound quality when playing back or encoding audio with libfdk_aac
+
+# Playing a file
 mpv Some.Home.Movie.mkv
 Playing: Some.Home.Movie.mkv
  (+) Video --vid=1 (*) (h264 1280x720 29.970fps)
@@ -153,7 +162,6 @@ Playing: Some.Home.Movie.mkv
 Using hardware decoding (nvdec). # this line is very important, you can turn on debug output with --v
 AO: [pulse] 44100Hz stereo 2ch float
 VO: [gpu] 1280x720 => 1710x720 cuda[nv12]
-
 ```
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
