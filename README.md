@@ -208,15 +208,16 @@ For mplayer to always use VDPAU hardware decoding you need to add
 vo=vdpau,
 vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
 ```
-to the bottom of /etc/mplayer/mplayer.conf
-`mpv` would choose VDPAU hw-decoding automatically if the config file has `--hwdec=auto/yes/vdpau` in it and nvdec is not supported.
-Maybe you need to add the codec names to `mpv`'s config file but I think that is only necessary for `mplayer` and `mpv` auto selects the best hardware decoding method.
+to the bottom of `/etc/mplayer/mplayer.conf`
+
+`mpv` would choose VDPAU hardware decoding automatically if the config file (`/etc/mpv/mpv.conf`) has `--hwdec=auto/yes/vdpau` in it and nvdec is not supported.
+Maybe you need to add the codec names to `mpv`'s config file but I think that is only necessary for `mplayer` and `mpv` auto detects and selects the best hardware decoding method.
 You would add this line to your `mpv` config file, but like I said – I don't think it is necessary. **ONLY** for `mplayer`!
 ```
 vd=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau # I guess only mplayer needs the codec names
 ```
-On my test systems adding just --hwdec=yes to the configuration file or commandline was enough for `mpv` to use the best hardware decoding method available
-Oh.. ahd btw. VLC will use VDPAU if you have hardware decoding enabled.
+On my test systems adding just `--hwdec=yes` to the configuration file or commandline was enough for `mpv` to use the best hardware decoding method available.
+Oh.. ahd btw. `VLC` will use VDPAU if you have hardware decoding enabled. (if you run `vlc` via a pty you can see it uses the Nvidia VDPAU shared libary)
 
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
