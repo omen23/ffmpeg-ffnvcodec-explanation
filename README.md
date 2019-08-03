@@ -221,11 +221,12 @@ Oh.. ahd btw. `VLC` will use VDPAU if you have hardware decoding enabled. (if yo
 
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
-Add `youtube-dl` to your system:
+Add `youtube-dl` to your system, so `mpv` can use it to play streams (it is best you read the man page of `mpv`, you can even choose the format `mpv` will play because it has hooks for `youtube-dl` and even it's own protocol: `yt-dl://`
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
 sudo apt install youtube-dl
+youtube-dl -U
 ```
 Now you can watch youtube videos and livestreams *(e.g. twitch.tv)* with hardware-acceleration too — use `mpv URL ...`
 ### 5. Use hardware-acceleration enabled chromium:
