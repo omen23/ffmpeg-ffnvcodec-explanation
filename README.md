@@ -150,11 +150,12 @@ e.g.
 cat /etc/mpv/mpv.conf
 stop-screensaver = "yes" # so neither xscreensaver nor session-lock (on KDE) kicks in
 hwdec=yes # use best hw-decoding method (legacy cards will use hardware VDPAU decoding instead of nvdec)
-vd=h264_cuvid,hevc_cuvid,mjpeg_cuvid,mpeg1_cuvid,mpeg2_cuvid,mpeg4_cuvid,vc1_cuvid,vp8_cuvid,vp9_cuvid # FFmpeg video decoder names
 # if you compiled FFmpeg with libfdk_aac and want to use it (idk why people think it is soo much better than FFmpeg's AAC decoder)
 # ad=libfdk_aac I got this line commented out as I don't hear a better sound quality when playing back or encoding audio with libfdk_aac
+```
 
-# Playing a file
+#### Playing a file
+```
 mpv Some.Home.Movie.mkv
 Playing: Some.Home.Movie.mkv
  (+) Video --vid=1 (*) (h264 1280x720 29.970fps)
@@ -162,8 +163,10 @@ Playing: Some.Home.Movie.mkv
 Using hardware decoding (nvdec). # this line is very important, you can turn on debug output with --v
 AO: [pulse] 44100Hz stereo 2ch float
 VO: [gpu] 1280x720 => 1710x720 cuda[nv12]
+```
 
-# or you can use 
+#### or you can use mplayer 
+```
 mplayer Some.Home.Movie.mkv -vc ffh264vdpau # for legacy cards
 MPlayer 1.3.0 (Debian), built with gcc-8 (C) 2000-2016 MPlayer Team
 do_connect: could not connect to socket
@@ -201,8 +204,8 @@ Movie-Aspect is 2.38:1 - prescaling to correct movie aspect.
 VO: [vdpau] 1280x720 => 1710x720 H.264 VDPAU acceleration 
 
 # but mpv would choose VDPAU hw-decoding automatically if the config file has --hwdec=auto/yes/vdpau in it and nvdec is not supported
-# maybe you need to add the codec names like vd=ffh264vdpau,ffhevcvdpau,ffdivxvdpau # and so on in mpv's configuration file
-# but I guess it will work with just --hwdec=auto
+# maybe you need to add the codec names like but I think that is not necessary  vd=ffh264vdpau,ffhevcvdpau,ffdivxvdpau,ffmpeg4vdpau,ffvc1vdpau,ffmpeg1vdpau,ffmpeg2vdpau # and so on in mpv's configuration file
+# but on my test systems adding just --hwdec=yes to the configuration file or commandline was enough for mpv to use the best hardware decoding method available
 ```
 **Protip: use mpv to play youtube videos with NVDEC VP9 decoding.**
 
