@@ -1,5 +1,5 @@
 # FFmpeg-ffnvcodec-explanation
- **\*\*last updated 03-08-2019\*\***
+ **\*\*last updated 24-09-2019\*\***
  – updated the manual and added a (`mplayer`) VDPAU hardware decoding guide
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic/disco (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
@@ -11,10 +11,10 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 ```
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
-# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430} available so your display server doesn't fail!
-# we will use 430.40 
+# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430,435} available so your display server doesn't fail!
+# we will use 435.21 
 # maybe you need the 32-bit versions of some libraries add ":i386" to the package name (i.e.: libnvidia-gl-430:i386)
-sudo apt install nvidia-driver-430 xserver-xorg-video-nvidia-430 nvidia-utils-430 nvidia-kernel-source-430 nvidia-kernel-common-430 nvidia-dkms-430 nvidia-compute-utils-430 libnvidia-ifr1-430 libnvidia-gl-430 libnvidia-fbc1-430 libnvidia-encode-430 libnvidia-decode-430 libnvidia-cfg1-430 libnvidia-compute-430
+sudo apt install nvidia-driver-435 xserver-xorg-video-nvidia-435 nvidia-utils-435 nvidia-kernel-source-435 nvidia-kernel-common-435 nvidia-dkms-435 nvidia-compute-utils-435 libnvidia-ifr1-435 libnvidia-gl-435 libnvidia-fbc1-435 libnvidia-encode-435 libnvidia-decode-435 libnvidia-cfg1-435 libnvidia-compute-435
 ```
 
 ### 1. Install the nv-codec-headers package:
@@ -30,11 +30,11 @@ Most recent version of the Video Codec SDK is 9.0.x. *but* **below** is a list o
 ```
 FFmpeg version of headers required to interface with Nvidias codec APIs.
 
-Corresponds to Video Codec SDK version 9.0.18.
+Corresponds to Video Codec SDK version 9.1.23.
 
 Minimum required driver versions:
-Linux: 418.30 or newer
-Windows: 418.81 or newer
+Linux: 435.21 or newer
+Windows: 436.15 or newer
 ```
 
 - **List of git branches for the legacy drivers**
