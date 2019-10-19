@@ -1,6 +1,6 @@
 # FFmpeg-ffnvcodec-explanation
- **\*\*last updated 24-09-2019\*\***
- – updated the manual (new driver `435.21` and `ffnvcodec` version)
+ **\*\*last updated 19-10-2019\*\***
+ – updated the manual (new driver `440.26` and `ffnvcodec` version)
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic/disco (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
 **This guide aims at the more modern cards compatible with NVENC and NVDEC – but there's also some instructions for cards using legacy drivers. (378, 390 and 396)**
@@ -11,10 +11,10 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 ```
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
-# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430,435} available so your display server doesn't fail!
-# we will use 435.21 
+# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430,435,440} available so your display server doesn't fail!
+# we will use 440.26 
 # maybe you need the 32-bit versions of some libraries add ":i386" to the package name (i.e.: libnvidia-gl-430:i386)
-sudo apt install nvidia-driver-435 xserver-xorg-video-nvidia-435 nvidia-utils-435 nvidia-kernel-source-435 nvidia-kernel-common-435 nvidia-dkms-435 nvidia-compute-utils-435 libnvidia-ifr1-435 libnvidia-gl-435 libnvidia-fbc1-435 libnvidia-encode-435 libnvidia-decode-435 libnvidia-cfg1-435 libnvidia-compute-435
+sudo apt install nvidia-driver-440 xserver-xorg-video-nvidia-440 nvidia-utils-440 nvidia-kernel-source-440 nvidia-kernel-common-440 nvidia-dkms-440 nvidia-compute-utils-440 libnvidia-ifr1-440 libnvidia-gl-440 libnvidia-fbc1-440 libnvidia-encode-440 libnvidia-decode-440 libnvidia-cfg1-440 libnvidia-compute-440
 ```
 
 ### 1. Install the nv-codec-headers package:
