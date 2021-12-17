@@ -1,6 +1,6 @@
 # FFmpeg-ffnvcodec-explanation
- **\*\*last updated 19-10-2019\*\***
- – updated the manual (new driver `440.26` and `ffnvcodec` version)
+ **\*\*last updated 17-12-2021\*\***
+ – updated the manual (new driver `495.44` and `ffnvcodec` version)
 
 How to get FFmpeg to export the needed symbols on (K)ubuntu cosmic/disco (and similar distros) so OBS and MPV can use NVENC and NVDEC (formerly called CUVID) on Fermi, Maxwell, Kepler, Pascal, Volta and Turing architectures and how to use hardware-acceleration in Chromium  © *2018 - 2019 oMeN23*.
 **This guide aims at the more modern cards compatible with NVENC and NVDEC – but there's also some instructions for cards using legacy drivers. (378, 390 and 396)**
@@ -11,10 +11,10 @@ Supported cards: https://developer.nvidia.com/video-encode-decode-gpu-support-ma
 ```
 sudo apt install ppa-purge # for safety
 sudo add-apt-repository ppa:graphics-drivers/ppa
-# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430,435,440} available so your display server doesn't fail!
+# please check the support plan for your GPU – nvidia-driver-{390,396,410,415,418,430,435,440,470,495} available so your display server doesn't fail!
 # we will use 440.26 
 # maybe you need the 32-bit versions of some libraries add ":i386" to the package name (i.e.: libnvidia-gl-430:i386)
-sudo apt install nvidia-driver-440 xserver-xorg-video-nvidia-440 nvidia-utils-440 nvidia-kernel-source-440 nvidia-kernel-common-440 nvidia-dkms-440 nvidia-compute-utils-440 libnvidia-ifr1-440 libnvidia-gl-440 libnvidia-fbc1-440 libnvidia-encode-440 libnvidia-decode-440 libnvidia-cfg1-440 libnvidia-compute-440
+sudo apt install nvidia-driver-495 xserver-xorg-video-nvidia-495 nvidia-utils-495 nvidia-kernel-source-495 nvidia-kernel-common-495 nvidia-dkms-495 nvidia-compute-utils-495 libnvidia-gl-495 libnvidia-fbc1-495 libnvidia-encode-495 libnvidia-decode-495 libnvidia-cfg1-495 libnvidia-compute-495
 ```
 
 ### 1. Install the nv-codec-headers package:
@@ -86,7 +86,7 @@ mkdir -p ~/devel/ffmpeg
 cd ~/devel/ffmpeg
 sudo apt source ffmpeg
 sudo chown -hR $USER: * # atleast my distro has problems when unpacking source – so we change ownership
-cd ffmpeg-4.1.3 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
+cd ffmpeg-4.2.4 # cd ffmpeg-x.x.x [x.x.x represents the version number] 
 debuild -b --no-sign --jobs-try=$((`nproc`/2))
 cd ..
 rm -f libavcodec-extra* libavfilter-extra*
@@ -138,7 +138,7 @@ mkdir -p ~/devel/mpv
 cd ~/devel/mpv
 sudo apt source mpv
 sudo chown -hR $USER: *
-cd mpv-0.29.1 # cd mpv-x.x.x [x.x.x represents version]
+cd mpv-0.32.0 # cd mpv-x.x.x [x.x.x represents version]
 debuild -b --no-sign --jobs-try=$((`nproc`/2))  
 cd ..
 sudo dpkg -i mpv*.deb # we dont need libmpv{-dev}
